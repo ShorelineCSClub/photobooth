@@ -76,7 +76,7 @@ export default function Stickers() {
 						</div>
 					</div>
 
-					<div className="relative w-66 h-144" ref={boothRef}>
+					<div className="relative w-auto h-144" ref={boothRef}>
 						<img
 							className="absolute h-full pointer-events-none z-30"
 							src={`/images/${searchParams.get("t") ?? 1}.png`}
