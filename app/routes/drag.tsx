@@ -75,8 +75,9 @@ export default function Drag() {
 
 						<div className="flex flex-col gap-2 items-center pt-8">
 							{[...new Array(4).keys()].map((i) => (
+								// TODO: Move this div img container into a new component
 								<img
-									className="w-62 h-40"
+									className="w-62 h-40 object-cover"
 									key={i}
 									src={order[i] === undefined ? undefined : imgSrcs[order[i]]}
 									draggable={false}

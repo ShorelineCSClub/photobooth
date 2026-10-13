@@ -8,7 +8,7 @@ const availableStickers = ["⭐", "❤️", "🌟", "✨", "💫", "🌈", "🦋
 
 export default function Stickers() {
 	const [searchParams] = useSearchParams();
-	const [order, setOrder] = useState<number[]>(new Array());
+	const [order, setOrder] = useState<number[]>([]);
 	const [imgSrcs, setImgSrcs] = useState(new Array<string>());
 	const [stickers, setStickers] = useState(new Array<{ text: string; initialX: number; initialY: number }>());
 	const imgRef = useRef<HTMLImageElement>(undefined!);
@@ -108,8 +108,9 @@ export default function Stickers() {
 
 						<div className="flex flex-col gap-1 pt-7">
 							{[...new Array(4).keys()].map((i) => (
+								// TODO: Move this div img container into a new component
 								<img
-									className="w-48 h-29"
+									className="w-48 h-29 object-cover"
 									key={i}
 									src={order[i] === undefined ? undefined : imgSrcs[order[i]]}
 									draggable={false}
