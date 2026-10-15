@@ -1,4 +1,4 @@
-import useCountdown from "ahooks/lib/useCountDown";
+import { useCountDown } from "ahooks";
 import { useCallback, useRef, useState } from "react";
 import { useSearchParams } from "react-router";
 import Webcam from "react-webcam";
@@ -16,7 +16,7 @@ export default function Camera() {
 		return webcamRef.current?.getScreenshot();
 	}, [webcamRef]);
 
-	const [countdown] = useCountdown({
+	const [countdown] = useCountDown({
 		leftTime: timeLeft,
 		onEnd: () => {
 			const imgSrc = capture();
